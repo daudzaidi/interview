@@ -1,0 +1,114 @@
+1. introduction
+2. most challenging project you have done till now
+3. Ask me questions ?
+4. given two numbers a and b , length 4 digits , transform number a to b to min operations
+   change 1 digit at a time
+
+   intermediate number should be a prime number
+
+   a and b are prime numbers
+
+   move to a and b in min operations
+   and if not possible print -1 its not possible
+
+
+   example :
+
+   1033 -> 1733 -> 3733 -> 3739
+
+   1033 - 3739
+
+   1. 1033 - 3033
+   2. 3033 - 3733
+   3. 3733 - 3739
+
+
+   CODE:
+
+
+
+   public int getMinSteps(int source, int dest){
+
+       if(source == dest){
+           return 0 ;
+       }
+
+       Character [] numA = extract(source);
+       Character [] numB = extract(dest);
+
+       int len1 = numA.length();
+       int len2 = numB.length();
+
+       int tracker = 0;
+
+       for(int i = 0; i< len1 ;i++){
+
+               if(numA[i]!=numB[i]){
+                   numA[i] = numB[i]
+                   tracker++;
+
+                  //if we have reached destination
+                  if(getInteger(numA) == getInteger(numB)){
+                    return tracker;
+                 }
+               }
+
+
+       }
+
+       return tracker;
+   }
+
+
+
+
+       A 1033
+       B 3739
+
+       digits from 0 to 9
+
+       0 1 2 3 4 5 6 7 8 9
+
+       1 - 3
+
+       1033 0
+           1733  - prime 0+1
+                         3033 - not a prime discard
+
+
+              1039 - not prime
+
+                1033
+
+              1733
+                 3733 1+1=2
+
+                 3739  2+1 = 3
+
+
+
+
+
+
+       Ans 3
+
+       isPrime(int v) - returns if prime or not
+
+       case 1: if a > b
+
+           number of prime numbers between 1033 and 3739
+
+           1033 modify 1 to 3 3033 not prime
+           1733
+
+           i = 0 to 4
+               A[0]= 1
+           j = 0 to 4
+
+
+
+       case 2: a < b
+
+
+
+       case 3 : a = b
