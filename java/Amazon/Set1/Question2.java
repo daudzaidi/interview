@@ -4,7 +4,9 @@ import java.util.Stack;
 
 /**
  * Created by shalvi on 27/06/16.
+ * Question - Calculate the maximum area of the rectangle formed by the histogram
  */
+
 public class Question2 {
     public static int calculateArea(int[] height){
         if (height == null || height.length == 0) {

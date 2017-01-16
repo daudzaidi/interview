@@ -27,14 +27,14 @@ public class StartingPointMergedLinkedList<T> {
                 tmp2=tmp2.getNextRef();
             }
         }
-            while(tmp1!=null && tmp2!=null){
-                if(tmp1==tmp2){
-                    start= tmp1;
-                    break;
-                }
-                tmp1=tmp1.getNextRef();
-                tmp2=tmp2.getNextRef();
+        while(tmp1!=null && tmp2!=null){
+            if(tmp1==tmp2){
+                start= tmp1;
+                break;
             }
+            tmp1=tmp1.getNextRef();
+            tmp2=tmp2.getNextRef();
+        }
 
         return start;
     }

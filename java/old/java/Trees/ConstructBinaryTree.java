@@ -78,6 +78,8 @@ public class ConstructBinaryTree <T>{
         nd.setRight(FromLevelorderInorder(level,in,j+1,inEnd));
         return nd;
     }
+
+
     public static void main(String args[]){
         ArrayList<Character> pre = new ArrayList<Character>();
         pre.add('A');

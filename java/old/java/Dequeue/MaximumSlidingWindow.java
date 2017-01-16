@@ -62,13 +62,48 @@ public class MaximumSlidingWindow {
         return B;
     }
 
+    /**
+     * Three rules :
+     *  1 . We use dequeue structure
+     *  2.  We keep useful indices in dequeue such that elements corresponding to indices are arranged in decreasing order
+     *      for a window size k
+     *  3. first element that is removed from dequeue is the largest element of that sub array
+     **/
+
+    public static void getMaximumClean(int[] arr, int k){
+
+        DoubleEndedQueueArrayListImpl<Integer> Q = new DoubleEndedQueueArrayListImpl();
+
+        for(int i = 0 ; i < k ; i++ ){
+            if(!Q.isEmpty() && arr[Q.peekRear()] < arr[i]){
+                Q.removeRear();
+            }
+            Q.insertRear(i);
+        }
+
+        for(int i = k ; i < arr.length ; i++){
+            System.out.println(arr[Q.peekFront()]);
+            while(!Q.isEmpty() && arr[Q.peekRear()] < arr[i]){
+                Q.removeRear();
+            }
+            while(!Q.isEmpty() && Q.peekFront() <= i - k){
+                Q.removeFront();
+            }
+
+            Q.insertRear(i);
+        }
+
+        if(!Q.isEmpty()){
+            System.out.println(arr[Q.peekFront()]);
+        }
+    }
     public static void main(String args[]) {
         int[] arr = {2, 3, 4, 2, 6, 2, 5, 1};
-        getMaximum(arr,3);
-        int[] B = getMaximumEfficient(arr,arr.length,3,new int[arr.length]);
+        getMaximumClean(arr,3);
+        /*int[] B = getMaximumEfficient(arr,arr.length,3,new int[arr.length]);
 
         for(int i =0;i<B.length;i++){
             System.out.println("B["+i+"] : "+ B[i]);
-        }
+        }*/
     }
 }

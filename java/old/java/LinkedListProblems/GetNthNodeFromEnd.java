@@ -4,7 +4,7 @@ import old.java.SinglyLinkedList.Node;
 import old.java.SinglyLinkedList.SinglyLinkedListImpl;
 
 /**
- * Created by pandita on 8/6/2015.
+ * Created by shalvi on 8/6/2015.
  */
 public class GetNthNodeFromEnd<T> {
     //One Scan Approach :

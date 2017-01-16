@@ -1,7 +1,13 @@
 package old.java.Sorting;
 
 /**
- * Created by pandita on 9/28/2015.
+ * Created by shalvi on 9/28/2015.
+ * TIME COMPLEXITY :
+ *
+ * BEST CASE : O(nlogn) - pivot value is somewhere in the middle
+ * WORST CASE : O(n^2) - pivot value is largest or smallest
+ *
+ * SPACE COMPLEXITY : O(nlogn)
  */
 public class QuickSort<T> {
 
@@ -39,7 +45,7 @@ public class QuickSort<T> {
     public static void main (String args[]){
         QuickSort<Integer> sort = new QuickSort<Integer>();
         Integer[] arr = new Integer[]{2,1,3,6,7,12,0};
-        sort.quicksort(arr,0,6);
+        sort.quicksort(arr,0,arr.length-1);
 
         for(int i =0;i<arr.length;i++){
             System.out.println(arr[i]);

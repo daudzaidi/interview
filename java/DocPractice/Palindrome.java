@@ -57,6 +57,7 @@ public class Palindrome {
                 return false;
             i++;
         }
+
         return true;
     }
 

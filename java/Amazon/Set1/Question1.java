@@ -4,6 +4,7 @@ import java.util.Stack;
 
 /**
  * Created by shalvi on 27/06/16.
+ * Question - are the paranthesis balanced ?
  */
 public class Question1 {
 
